@@ -226,7 +226,7 @@ class SydentConfig:
         # to ensure that they don't override anyone's settings which are
         # in their config file in the default section (which is likely,
         # because sydent used to be braindead).
-        use_defaults = not os.path.exists(config_file)
+        use_defaults = os.path.exists(config_file)
 
         cfg = ConfigParser()
         for sect, entries in CONFIG_DEFAULTS.items():
